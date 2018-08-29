@@ -34,6 +34,22 @@ const element3 = (
   <div tabIndex = "index_0">element_3</div>
 )
 
+// const title = response.potentiallyMaliciousInput;
+// 直接使用是安全的：
+// const element4 = <h1>{title}</h1>;
+
+const element5 = (
+  <h1 class="greeting">
+    Hello, World!
+  </h1>
+)
+//element5和element5_2两种写法效果一样
+const element5_2 = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+)
+
 class App extends Component {
   render() {
     return (
@@ -49,6 +65,9 @@ class App extends Component {
       {element}
       {element2}
       {element3}
+      {/* {element4} */}
+      {element5}
+      {element5_2}
       </div>
     );
   }
